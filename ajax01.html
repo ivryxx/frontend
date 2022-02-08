@@ -11,6 +11,11 @@
 div.question-box {
 margin: 10px 0 20px 0;
 }
+
+ .bad {
+color:  red;
+ }
+
 </style>
 
 <script>
@@ -26,13 +31,19 @@ margin: 10px 0 20px 0;
                     let gu_name = rows[i]['MSRSTE_NM']
                     let gu_mise = rows[i]['IDEX_MVL']
 
-                    let temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+                    let temp_html = ``
+
+                    if (gu_mise > 60) {
+                         temp_html = `<li class="bad">${gu_name} : ${gu_mise}</li>`
+                    } else {
+                         temp_html = `<li>${gu_name} : ${gu_mise}</li>`
+                    }
 
                     $('#names-q1').append(temp_html)
                 }
             }
         })
-// 여기에 코드를 입력하세요
+// 여기에
 }
 </script>
 
