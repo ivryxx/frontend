@@ -57,15 +57,29 @@ crossorigin="anonymous"></script>
         .mycards > .card {
             margin-top: 10px;
             margin-bottom: 10px;
-
         }
 
     </style>
+    <script>
+        $(document).ready(function(){
+
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/namyangju",
+                data: {},
+                success: function(response) {
+                    $('#temp').text(response['temp'])
+                }
+            })
+            });
+
+    </script>
 </head>
 
 <body>
     <div class="mytitle">
         <h1>Coldplay fanpage</h1>
+        <p>Temperature : <span id="temp">00.0</span>℃</p>
     </div>
 
     <div class="mypost">
